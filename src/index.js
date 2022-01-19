@@ -31,6 +31,7 @@ function validarTarjeta () {
     if (numeroTarjeta== "") {
         alert("Digite el numero de su tarjeta");
     }
+    
     else {
         mensajeTarjeta.innerHTML = "Validando su tarjeta...";
         if (validator.isValid(numeroTarjeta)) {
@@ -39,8 +40,11 @@ function validarTarjeta () {
         else {
             mensajeTarjeta.innerHTML = "Su tarjeta es invalida";
         }
+
+        console.log(validator.maskify(numeroTarjeta))
+        }
     }
-}
+
 
 
 
