@@ -30,8 +30,6 @@ const validator = {
     } 
    return digitosTarjeta.toString().replace(/,/g,"");
 
-   
-    
    } 
 };
 
