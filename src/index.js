@@ -1,5 +1,5 @@
 import validator from './validator.js';
-console.log(validator);
+
 
 //Elementos del DOM (documento HTML)
 const inputNombre=document.getElementById("nombre");
