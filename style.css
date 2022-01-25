@@ -1,0 +1,84 @@
+
+body {
+    background-color: #e3f2fd;
+}
+
+header {
+    text-align: center;
+    text-shadow: black 3px 3px 5px;
+    font-style: italic;
+    font-family: cursive;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+header h1 {
+    margin-top: -30px;
+}
+
+#inicio {
+    text-align: center;
+    font-size: 50px;
+    font-style: italic; 
+}
+#nombre {
+    width: 300px;
+    height: 30px;
+}
+#enviar {
+    width: 100px;
+    height: 50px;
+    font-family:Verdana;
+    font-size: 20px;
+}
+#tarjetadecredito {
+    width:500px;
+    background: linear-gradient(#039be5,#00bcd4);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: 'Courier New';
+}
+#tarjeta {
+    border:none;
+    background-color: rgba(255, 255, 255, 0.5) ;
+    padding: 7px 10px;
+    width: 100%;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+#validar, #cambiarTarjeta {
+    border:none;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 7px 10px;
+    font-size: 16px;
+    color: #006db3;
+    border-radius: 5px;
+}
+#mensajeChip {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+#validar:hover, #cambiarTarjeta:hover {
+    background-color: #ffffff;
+}
+
+#tarjetaOculta {
+    font-size: 34px;
+}
+button {
+    cursor: pointer;
+}
+.rojo {
+    color: crimson;
+}
+.verde {
+    color: #f1f8e9;
+}
+
+.oculto {
+    display:none
+}
