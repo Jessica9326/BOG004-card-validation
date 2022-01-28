@@ -1,4 +1,5 @@
 
+/*Cambio color del fondo  */
 body {
     background-color: #e3f2fd;
 }
@@ -9,7 +10,7 @@ header {
     font-style: italic;
     font-family: cursive;
     font-size: 40px;
-    display: flex;
+    display: flex; 
     align-items: center;
     flex-direction: column;
 }
@@ -69,9 +70,7 @@ header h1 {
 #tarjetaOculta {
     font-size: 34px;
 }
-button {
-    cursor: pointer;
-}
+
 .rojo {
     color: crimson;
 }
@@ -81,4 +80,8 @@ button {
 
 .oculto {
     display:none
+}
+/*Cambio cursos al pasar por los botones  */
+button {
+    cursor: pointer;
 }

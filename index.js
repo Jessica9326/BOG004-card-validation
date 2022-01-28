@@ -11,13 +11,10 @@ const mensajeTarjeta=document.getElementById("mensajetarjeta");
 const btncambiarTarjeta=document.getElementById("cambiarTarjeta");
 const tarjetaOculta=document.getElementById("tarjetaOculta");
 
-//Escuchadores de Eventos
-btnEnviar.addEventListener("click", enviarNombre);
-btnValidar.addEventListener("click", validarTarjeta); 
-btncambiarTarjeta.addEventListener("click", cambiarTarjeta);
+
 
 //Metodos
-function enviarNombre () {
+const enviarNombre = () => {
     if (inputNombre.value == "") {
         alert("Por favor digite su nombre");    
     }
@@ -29,17 +26,17 @@ function enviarNombre () {
     }
 }
  
-function ocultarElemento (id){
+const ocultarElemento = (id) => {
     const elemento = document.getElementById(id)   
-    elemento.classList.add("oculto")
+    elemento.classList.add("oculto") //Se utilizo el atributo class//
 }
 
-function mostrarElemento (id) {
+const mostrarElemento = (id) => {
     const elemento = document.getElementById(id)
-    elemento.classList.remove("oculto")       
+    elemento.classList.remove("oculto") //Se utilizo el atributo class//      
 }
 
-function validarTarjeta () {
+const validarTarjeta = () => {
     const numeroTarjeta=inputTarjeta.value
     
     if (numeroTarjeta== "") {
@@ -66,7 +63,7 @@ function validarTarjeta () {
         }
     }
 }
-function cambiarTarjeta () {
+const cambiarTarjeta= () => {
     mostrarElemento("tarjeta")
     ocultarElemento("mensajetarjeta")
     mostrarElemento("validar")
@@ -75,7 +72,10 @@ function cambiarTarjeta () {
     tarjetaOculta.innerHTML = "";
 }
 
-    
+ //Escuchadores de Eventos
+btnEnviar.addEventListener("click", enviarNombre);
+btnValidar.addEventListener("click", validarTarjeta); 
+btncambiarTarjeta.addEventListener("click", cambiarTarjeta);   
 
 
 
