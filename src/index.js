@@ -2,32 +2,33 @@ import validator from './validator.js';
 
 
 //Elementos del DOM (documento HTML)
-const inputNombre=document.getElementById("nombre");
-const btnEnviar=document.getElementById("enviar");
-const btnValidar=document.getElementById("validar");
-const mensajeBienvenida=document.getElementById("mensajedebienvenida");
-const inputTarjeta=document.getElementById("tarjeta");
-const mensajeTarjeta=document.getElementById("mensajetarjeta");
-const btncambiarTarjeta=document.getElementById("cambiarTarjeta");
-const tarjetaOculta=document.getElementById("tarjetaOculta");
-
-
+const inputNombre = document.getElementById("nombre");
+const btnEnviar = document.getElementById("enviar");
+const btnValidar = document.getElementById("validar");
+const mensajeBienvenida = document.getElementById("mensajedebienvenida");
+const inputTarjeta = document.getElementById("tarjeta");
+const mensajeTarjeta = document.getElementById("mensajetarjeta");
+const btncambiarTarjeta = document.getElementById("cambiarTarjeta");
+const tarjetaOculta = document.getElementById("tarjetaOculta");
+const mInicio = document.getElementById("mInicio");
+const mAdoptar = document.getElementById("mAdoptar");
+const mDonar = document.getElementById("mDonar");
 
 //Metodos
 const enviarNombre = () => {
     if (inputNombre.value == "") {
-        alert("Por favor digite su nombre");    
+        alert("Por favor digite su nombre");
     }
-    
+
     else {
         mensajeBienvenida.innerHTML = inputNombre.value;
         mostrarElemento("tarjetadecredito")
         ocultarElemento("inicio")
     }
 }
- 
+
 const ocultarElemento = (id) => {
-    const elemento = document.getElementById(id)   
+    const elemento = document.getElementById(id)
     elemento.classList.add("oculto") //Se utilizo el atributo class//
 }
 
@@ -37,9 +38,9 @@ const mostrarElemento = (id) => {
 }
 
 const validarTarjeta = () => {
-    const numeroTarjeta=inputTarjeta.value
-    
-    if (numeroTarjeta== "") {
+    const numeroTarjeta = inputTarjeta.value
+
+    if (numeroTarjeta == "") {
         alert("Digite el numero de su tarjeta");
     }
     else {
@@ -47,23 +48,23 @@ const validarTarjeta = () => {
         mostrarElemento("mensajetarjeta")
         if (validator.isValid(numeroTarjeta)) {
             mensajeTarjeta.innerHTML = "Su tarjeta es válida ";
-            ocultarElemento("tarjeta")  
+            ocultarElemento("tarjeta")
             ocultarElemento("validar")
             mostrarElemento("cambiarTarjeta")
             ocultarElemento("digitarTarjeta")
-            mensajeTarjeta.classList.add("verde") 
+            mensajeTarjeta.classList.add("verde")
             mensajeTarjeta.classList.remove("rojo")
             tarjetaOculta.innerHTML = validator.maskify(numeroTarjeta);
         }
 
         else {
             mensajeTarjeta.innerHTML = "Su tarjeta es invalida " + numeroTarjeta;
-            mensajeTarjeta.classList.add("rojo") 
+            mensajeTarjeta.classList.add("rojo")
             mensajeTarjeta.classList.remove("verde")
         }
     }
 }
-const cambiarTarjeta= () => {
+const cambiarTarjeta = () => {
     mostrarElemento("tarjeta")
     ocultarElemento("mensajetarjeta")
     mostrarElemento("validar")
@@ -72,10 +73,21 @@ const cambiarTarjeta= () => {
     tarjetaOculta.innerHTML = "";
 }
 
- //Escuchadores de Eventos
+const mostrarInicio=() =>{
+    mostrarElemento("inicio")
+    ocultarElemento("tarjetadecredito")
+}
+const mostrarDonar=() => {
+    mostrarElemento("tarjetadecredito")
+    ocultarElemento("inicio")
+}
+
+//Escuchadores de Eventos
 btnEnviar.addEventListener("click", enviarNombre);
-btnValidar.addEventListener("click", validarTarjeta); 
-btncambiarTarjeta.addEventListener("click", cambiarTarjeta);   
+btnValidar.addEventListener("click", validarTarjeta);
+btncambiarTarjeta.addEventListener("click", cambiarTarjeta);
+mInicio.addEventListener("click", mostrarInicio );
+mDonar.addEventListener("click", mostrarDonar);
 
 
 

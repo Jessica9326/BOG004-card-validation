@@ -1,36 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <img src="img/imagen-inicio.png" width="500" height="auto" />
-      <h1>Dona una huella</h1>
-   </header>
-    <main>
-      <section id="inicio">
-        <label for="nombre"> Digita tu nombre: </label>
-        <input type="text" id="nombre" /><br/><br/>
-        <button id="enviar" >Enviar</button>
-      </section> 
-      <section id="tarjetadecredito"  class="oculto">
-        <h1 id="mensajedebienvenida"> </h1>
-        <label id="digitarTarjeta" for="tarjeta"> Digita el número de tarjeta: </label><br/>
-        <input type="number" id="tarjeta" min="0"/> 
-        <div id="tarjetaOculta"></div><br/><br/>
-      
-      
-     <div id="mensajeChip"><div id="mensajetarjeta"> </div> <img src="img/chip.png" width="80" height="auto"/></div> <br/><br/>  
 
-        <button id="validar">Validar</button>
-       <button id="cambiarTarjeta" class="oculto">Cambiar Tarjeta</button> 
-      </section>
-    </main>
-    <footer>
-    </footer>
-    <script src="index.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+   <nav class="menu">
+    <ul>
+      <li><a id="mInicio" href="#">Inicio</a></li>
+      <li><a id="mAdoptar" href="#">Adoptar</a></li>
+      <li><a id="mDonar" href="#">Donar</a></li>
+    </ul>
+
+   </nav>
+
+  </header>
+  <main>
+    <img src="img/nvimg.png" width="500" height="auto" />
+    <div class="contenedorImagenes">
+      <img src="img/Cat-PNG-Photos.png" class="imgHeader" />
+      <div>
+        <h1>Dona una huella</h1>
+
+        <section id="inicio">
+          <label for="nombre"> Digita tu nombre: </label><br />
+          <input type="text" id="nombre" /><br /><br />
+          <button id="enviar">Enviar</button>
+        </section>
+        
+        <section id="tarjetadecredito" class="oculto">
+          <h1 id="mensajedebienvenida"> </h1>
+          <label id="digitarTarjeta" for="tarjeta"> Digita el número de tarjeta: </label><br />
+          <input type="number" id="tarjeta" min="0" />
+          <div id="tarjetaOculta"></div><br /><br />
+          <div id="mensajeChip">
+            <div id="mensajetarjeta"> </div> <img src="img/chip.png" width="80" height="auto" />
+          </div> <br /><br />
+
+          <button id="validar">Validar</button>
+          <button id="cambiarTarjeta" class="oculto">Cambiar Tarjeta</button>
+        </section>
+
+      </div>
+      <img src="img/Golden-Retriever-PNG-Transparent-File.png" class="imgHeader" />
+    </div>
+  </main>
+  <footer>
+    Gracias por tu donación
+  </footer>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
+
+<!-- Se utiliza class para acceder al elemento de ocultar y utilizarlo en varias secciones  -->
